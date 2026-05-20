@@ -227,8 +227,8 @@ const Index = () => {
 
               {/* Приветственное сообщение */}
               <div className="flex gap-2 sm:gap-4">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-[#5865f2] rounded-full flex items-center justify-center flex-shrink-0">
-                  <Mic className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex-shrink-0 overflow-hidden">
+                  <img src="https://cdn.poehali.dev/projects/ed09ae26-f2c8-4599-bb8e-886f86546a8e/bucket/c8a4af9f-16d5-42a9-951a-a8357046900a.png" alt="Ruika Saki" className="w-full h-full object-cover" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-baseline gap-2 mb-1">
