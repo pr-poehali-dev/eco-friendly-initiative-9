@@ -254,6 +254,9 @@ const Index = () => {
                       <p className="text-[#dcddde] text-sm sm:text-base mt-2">
                         А также свободно <strong>20 персонажей для озвучивания</strong> (все девушки)
                       </p>
+                      <p className="text-[#b9bbbe] text-sm sm:text-base mt-2 italic">
+                        Сам мод когда будет разработан будет здесь и будет ссылка на скачивание
+                      </p>
                     </>
                   ) : (
                     <>
