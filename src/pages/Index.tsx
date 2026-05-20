@@ -224,42 +224,6 @@ const Index = () => {
                 </div>
               </div>
 
-              {/* Сообщение участника 1 */}
-              <div className="flex gap-2 sm:gap-4">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-white text-xs sm:text-sm font-medium">А</span>
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-baseline gap-2 mb-1">
-                    <span className="text-white font-medium text-sm sm:text-base">Алексей_voice</span>
-                    <span className="text-[#72767d] text-xs hidden sm:inline">Сегодня в 11:42</span>
-                  </div>
-                  <div className="text-[#dcddde] text-sm sm:text-base mb-2">
-                    Отличный проект! Уже отправил свою запись, жду ответа 🎙️
-                  </div>
-                  <div className="flex items-center gap-2 bg-[#2f3136] rounded px-3 py-2 w-fit">
-                    <FileAudio className="w-4 h-4 text-[#5865f2]" />
-                    <span className="text-[#dcddde] text-xs">demo_voice_aleksey.mp3</span>
-                    <span className="text-[#72767d] text-xs">• 1.2 MB</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Сообщение участника 2 */}
-              <div className="flex gap-2 sm:gap-4">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-green-500 to-teal-500 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-white text-xs sm:text-sm font-medium">К</span>
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-baseline gap-2 mb-1">
-                    <span className="text-white font-medium text-sm sm:text-base">Катя_актриса</span>
-                    <span className="text-[#72767d] text-xs hidden sm:inline">Сегодня в 12:15</span>
-                  </div>
-                  <div className="text-[#dcddde] text-sm sm:text-base">
-                    Есть опыт озвучки в играх, отправила видео с несколькими персонажами. Очень хочу поучаствовать! ✨
-                  </div>
-                </div>
-              </div>
 
               {/* Требования к записи */}
               <div className="bg-[#2f3136] border border-[#202225] rounded-lg p-4 sm:p-6">
