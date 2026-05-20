@@ -48,7 +48,7 @@ const Index = () => {
               <Mic className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
             </div>
             <div>
-              <h1 className="text-lg sm:text-xl font-bold text-white">VoiceMod Hub</h1>
+              <h1 className="text-lg sm:text-xl font-bold text-white">Помощь с модом на яндере симулятор ! (ОЗВУЧКА!)</h1>
               <p className="text-xs text-[#b9bbbe] hidden sm:block">Ищем голосовых актёров для мода</p>
             </div>
           </div>
