@@ -214,8 +214,11 @@ const Index = () => {
                     также упомяну — в примере можете озвучить <strong>любой текст</strong>, либо же текст с мода 1980х:
                   </p>
                   <div className="bg-[#202225] border border-[#40444b] rounded-lg p-3 sm:p-4 mb-3 font-mono text-sm text-[#dcddde] leading-relaxed whitespace-pre-line">{"I eliminated the girl who was planning to confess to my Senpai...\n...but another girl has fallen in love with him.\nJust like the last girl, she plans to confess to him at 6:00 PM on Friday.\nI can't let her take him from me.\nOne way or another, I must eliminate her before the end of the week..."}</div>
-                  <p className="text-[#dcddde] text-sm sm:text-base">
+                  <p className="text-[#dcddde] text-sm sm:text-base mb-2">
                     надеюсь то что кто-то да поможет всех люблю! (○｀ 3′○)
+                  </p>
+                  <p className="text-[#b9bbbe] text-sm sm:text-base italic">
+                    Возможны неполадки что не смогу отвечать нооо это в крайняк ! о_0
                   </p>
 
                 </div>
@@ -409,7 +412,7 @@ const Index = () => {
                   {[
                     { icon: "Star", title: "Твой голос в игре", desc: "Твой голос услышат все игроки что поиграют в мод <3" },
                     { icon: "Shield", title: "Полное авторство", desc: "Ты указан в титрах мода" },
-                    { icon: "MessageSquare", title: "Быстрый ответ ! ^_^", desc: "Работаем вместе, даю обратную связь" },
+                    { icon: "MessageSquare", title: "Быстрый ответ ! ^_^", desc: "Работаем вместе ! при любых проблемок разработчик поможет ;3" },
                     { icon: "CheckCircle", title: "Гибкий формат", desc: "Запись дома — никуда ехать не надо" },
                   ].map((feature, index) => (
                     <div
