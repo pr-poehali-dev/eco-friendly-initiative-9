@@ -257,9 +257,7 @@ const Index = () => {
                       <p className="text-[#b9bbbe] text-sm sm:text-base mt-2 italic">
                         Сам мод когда будет разработан будет здесь и будет ссылка на скачивание
                       </p>
-                      <p className="text-[#b9bbbe] text-sm sm:text-base mt-2 italic">
-                        также на сайте в боковой панели справа могут быть написаны чужие имена — это просто остаток от шаблона сайта, не обращайте внимания ^_^
-                      </p>
+
                     </>
                   ) : (
                     <>
@@ -472,30 +470,7 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Боковая панель участников */}
-          <div className="hidden xl:block w-60 bg-[#2f3136] p-4">
-            <div className="mb-4">
-              <h3 className="text-[#8e9297] text-xs font-semibold uppercase tracking-wide mb-2">Подали заявку — 12</h3>
-              <div className="space-y-2">
-                {[
-                  { name: "Алексей_voice", status: "Заявка принята ✓", avatar: "А", color: "from-purple-500 to-pink-500" },
-                  { name: "Катя_актриса", status: "На рассмотрении", avatar: "К", color: "from-green-500 to-teal-500" },
-                  { name: "Sergey_deep", status: "Заявка принята ✓", avatar: "С", color: "from-blue-500 to-indigo-500" },
-                ].map((user, index) => (
-                  <div key={index} className="flex items-center gap-3 p-2 rounded hover:bg-[#36393f] cursor-pointer">
-                    <div className={`w-8 h-8 bg-gradient-to-r ${user.color} rounded-full flex items-center justify-center relative`}>
-                      <span className="text-white text-sm font-medium">{user.avatar}</span>
-                      <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-[#3ba55c] border-2 border-[#2f3136] rounded-full"></div>
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="text-white text-sm font-medium truncate">{user.name}</div>
-                      <div className="text-[#b9bbbe] text-xs truncate">{user.status}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+
         </div>
       </div>
     </div>
