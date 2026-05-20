@@ -404,12 +404,12 @@ const Index = () => {
 
               {/* Преимущества */}
               <div className="bg-[#2f3136] border border-[#202225] rounded-lg p-4 sm:p-6">
-                <h3 className="text-lg sm:text-xl font-bold text-white mb-4">Почему стоит участвовать?</h3>
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-4">Почему же стоит поучаствовать в проекте ?</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   {[
-                    { icon: "Star", title: "Твой голос в игре", desc: "Услышат тысячи игроков по всему миру" },
+                    { icon: "Star", title: "Твой голос в игре", desc: "Твой голос услышат все игроки что поиграют в мод <3" },
                     { icon: "Shield", title: "Полное авторство", desc: "Ты указан в титрах мода" },
-                    { icon: "MessageSquare", title: "Живое общение", desc: "Работаем вместе, даю обратную связь" },
+                    { icon: "MessageSquare", title: "Быстрый ответ ! ^_^", desc: "Работаем вместе, даю обратную связь" },
                     { icon: "CheckCircle", title: "Гибкий формат", desc: "Запись дома — никуда ехать не надо" },
                   ].map((feature, index) => (
                     <div
