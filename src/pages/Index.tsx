@@ -210,6 +210,16 @@ const Index = () => {
                   <p className="text-[#dcddde] text-sm sm:text-base mb-3">
                     <strong>РУССКАЯ ВЕРСИЯ — Приветааау!</strong> Я создаю мод на Яндере Симулятор <strong>«Арика Айши»</strong>. Мой псевдоним — Руика Саки 🌸 Я активно ищу людей, которые смогут озвучить текст на <strong>АНГЛИЙСКОМ языке</strong>. Прикрепите файл с примером озвучки! Буду благодарна любой помощи в разработке. Просьба указать в поле <strong>«Имя»</strong> ваш псевдоним / имя, чтобы я указала вас в титрах ^_^
                   </p>
+                  <p className="text-[#b9bbbe] text-sm sm:text-base mb-3 italic">
+                    также извиняюсь что текст без запятых и точек мне было чутка в падлу ставить ~({">_<"}。)＼
+                  </p>
+                  <p className="text-[#dcddde] text-sm sm:text-base mb-3">
+                    также упомяну — в примере можете озвучить <strong>любой текст</strong>, либо же текст с мода 1980х:
+                  </p>
+                  <div className="bg-[#202225] border border-[#40444b] rounded-lg p-3 sm:p-4 mb-3 font-mono text-sm text-[#dcddde] leading-relaxed whitespace-pre-line">{"I eliminated the girl who was planning to confess to my Senpai...\n...but another girl has fallen in love with him.\nJust like the last girl, she plans to confess to him at 6:00 PM on Friday.\nI can't let her take him from me.\nOne way or another, I must eliminate her before the end of the week..."}</div>
+                  <p className="text-[#dcddde] text-sm sm:text-base">
+                    надеюсь то что кто-то да поможет всех люблю! (○｀ 3′○)
+                  </p>
                   <div className="bg-[#2f3136] border-l-4 border-[#5865f2] p-3 sm:p-4 rounded">
                     <h3 className="text-white font-semibold mb-2 text-sm sm:text-base">Что нужно от тебя:</h3>
                     <ul className="space-y-1 text-xs sm:text-sm text-[#b9bbbe]">
