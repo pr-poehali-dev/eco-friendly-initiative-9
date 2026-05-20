@@ -220,15 +220,7 @@ const Index = () => {
                   <p className="text-[#dcddde] text-sm sm:text-base">
                     надеюсь то что кто-то да поможет всех люблю! (○｀ 3′○)
                   </p>
-                  <div className="bg-[#2f3136] border-l-4 border-[#5865f2] p-3 sm:p-4 rounded">
-                    <h3 className="text-white font-semibold mb-2 text-sm sm:text-base">Что нужно от тебя:</h3>
-                    <ul className="space-y-1 text-xs sm:text-sm text-[#b9bbbe]">
-                      <li>🎙️ Запись голоса — аудио или видео файл</li>
-                      <li>📝 Коротко о себе и своём опыте</li>
-                      <li>🎭 Можешь показать разные интонации и персонажей</li>
-                      <li>⚡ Отвечу каждому в течение 48 часов</li>
-                    </ul>
-                  </div>
+
                 </div>
               </div>
 
