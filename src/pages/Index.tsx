@@ -251,6 +251,9 @@ const Index = () => {
                       <p className="text-[#b9bbbe] text-sm sm:text-base italic">
                         Возможны неполадки что не смогу отвечать нооо это в крайняк ! о_0
                       </p>
+                      <p className="text-[#dcddde] text-sm sm:text-base mt-2">
+                        А также свободно <strong>20 персонажей для озвучивания</strong> (все девушки)
+                      </p>
                     </>
                   ) : (
                     <>
