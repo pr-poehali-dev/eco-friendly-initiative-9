@@ -157,7 +157,7 @@ const Index = () => {
                 <span className="text-white text-sm font-medium">М</span>
               </div>
               <div className="flex-1 min-w-0">
-                <div className="text-white text-sm font-medium truncate">ModDev</div>
+                <div className="text-white text-sm font-medium truncate">Ruika Saki Mod Arika Aishi</div>
                 <div className="text-[#3ba55c] text-xs truncate">● В сети</div>
               </div>
               <div className="flex gap-1">
@@ -203,7 +203,7 @@ const Index = () => {
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-baseline gap-2 mb-1">
-                    <span className="text-white font-medium text-sm sm:text-base">ModDev</span>
+                    <span className="text-white font-medium text-sm sm:text-base">Ruika Saki Mod Arika Aishi</span>
                     <span className="text-[#5865f2] text-xs font-semibold bg-[#5865f2]/20 px-1.5 py-0.5 rounded">Разработчик</span>
                     <span className="text-[#72767d] text-xs hidden sm:inline">Сегодня</span>
                   </div>
