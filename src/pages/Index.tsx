@@ -208,7 +208,7 @@ const Index = () => {
                     <span className="text-[#72767d] text-xs hidden sm:inline">Сегодня</span>
                   </div>
                   <p className="text-[#dcddde] text-sm sm:text-base mb-3">
-                    <strong>Привет! Я создаю мод и ищу голосовых актёров.</strong> Нужны живые голоса для озвучки персонажей — уникальные, настоящие, с характером.
+                    <strong>РУССКАЯ ВЕРСИЯ — Приветааау!</strong> Я создаю мод на Яндере Симулятор <strong>«Арика Айши»</strong>. Мой псевдоним — Руика Саки 🌸 Я активно ищу людей, которые смогут озвучить текст на <strong>АНГЛИЙСКОМ языке</strong>. Прикрепите файл с примером озвучки! Буду благодарна любой помощи в разработке. Просьба указать в поле <strong>«Имя»</strong> ваш псевдоним / имя, чтобы я указала вас в титрах ^_^
                   </p>
                   <div className="bg-[#2f3136] border-l-4 border-[#5865f2] p-3 sm:p-4 rounded">
                     <h3 className="text-white font-semibold mb-2 text-sm sm:text-base">Что нужно от тебя:</h3>
