@@ -25,6 +25,7 @@ const Index = () => {
   const [fileName, setFileName] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({ name: "", contact: "", role: "", message: "" });
+  const [lang, setLang] = useState<"ru" | "en">("ru");
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -52,11 +53,25 @@ const Index = () => {
             </div>
           </div>
           <div className="hidden sm:flex items-center gap-4">
+            <div className="flex bg-[#202225] rounded-lg p-1 gap-1">
+              <button
+                onClick={() => setLang("ru")}
+                className={`px-3 py-1 rounded text-sm font-semibold transition-colors ${lang === "ru" ? "bg-[#5865f2] text-white" : "text-[#b9bbbe] hover:text-white"}`}
+              >
+                RU
+              </button>
+              <button
+                onClick={() => setLang("en")}
+                className={`px-3 py-1 rounded text-sm font-semibold transition-colors ${lang === "en" ? "bg-[#5865f2] text-white" : "text-[#b9bbbe] hover:text-white"}`}
+              >
+                EN
+              </button>
+            </div>
             <Button
               className="bg-[#5865f2] hover:bg-[#4752c4] text-white px-6 py-2 rounded text-sm font-medium"
               onClick={() => document.getElementById("contact-form")?.scrollIntoView({ behavior: "smooth" })}
             >
-              Оставить заявку
+              {lang === "ru" ? "Оставить заявку" : "Submit application"}
             </Button>
           </div>
           <Button
@@ -69,7 +84,21 @@ const Index = () => {
         </div>
 
         {mobileMenuOpen && (
-          <div className="sm:hidden mt-4 pt-4 border-t border-[#202225]">
+          <div className="sm:hidden mt-4 pt-4 border-t border-[#202225] flex flex-col gap-3">
+            <div className="flex bg-[#202225] rounded-lg p-1 gap-1 w-fit">
+              <button
+                onClick={() => setLang("ru")}
+                className={`px-3 py-1 rounded text-sm font-semibold transition-colors ${lang === "ru" ? "bg-[#5865f2] text-white" : "text-[#b9bbbe] hover:text-white"}`}
+              >
+                RU
+              </button>
+              <button
+                onClick={() => setLang("en")}
+                className={`px-3 py-1 rounded text-sm font-semibold transition-colors ${lang === "en" ? "bg-[#5865f2] text-white" : "text-[#b9bbbe] hover:text-white"}`}
+              >
+                EN
+              </button>
+            </div>
             <Button
               className="bg-[#5865f2] hover:bg-[#4752c4] text-white px-6 py-2 rounded text-sm font-medium w-full"
               onClick={() => {
@@ -77,7 +106,7 @@ const Index = () => {
                 document.getElementById("contact-form")?.scrollIntoView({ behavior: "smooth" });
               }}
             >
-              Оставить заявку
+              {lang === "ru" ? "Оставить заявку" : "Submit application"}
             </Button>
           </div>
         )}
@@ -183,9 +212,9 @@ const Index = () => {
                 <Menu className="w-5 h-5" />
               </Button>
               <Mic className="w-5 h-5 text-[#8e9297]" />
-              <span className="text-white font-semibold">отправить-озвучку</span>
+              <span className="text-white font-semibold">{lang === "ru" ? "отправить-озвучку" : "submit-voiceover"}</span>
               <div className="w-px h-6 bg-[#40444b] mx-2 hidden sm:block"></div>
-              <span className="text-[#8e9297] text-sm hidden sm:block">Присылай демо-запись и расскажи о себе</span>
+              <span className="text-[#8e9297] text-sm hidden sm:block">{lang === "ru" ? "Присылай демо-запись и расскажи о себе" : "Send your demo and tell us about yourself"}</span>
               <div className="ml-auto flex items-center gap-2 sm:gap-4">
                 <Bell className="w-4 h-4 sm:w-5 sm:h-5 text-[#b9bbbe] cursor-pointer hover:text-[#dcddde]" />
                 <Users className="w-4 h-4 sm:w-5 sm:h-5 text-[#b9bbbe] cursor-pointer hover:text-[#dcddde]" />
@@ -207,19 +236,39 @@ const Index = () => {
                     <span className="text-[#5865f2] text-xs font-semibold bg-[#5865f2]/20 px-1.5 py-0.5 rounded">Разработчик</span>
                     <span className="text-[#72767d] text-xs hidden sm:inline">Сегодня</span>
                   </div>
-                  <p className="text-[#dcddde] text-sm sm:text-base mb-3">
-                    <strong>РУССКАЯ ВЕРСИЯ — Приветааау!</strong> Я создаю мод на Яндере Симулятор <strong>«Арика Айши»</strong>. Мой псевдоним — Руика Саки 🌸 Я активно ищу людей, которые смогут озвучить текст на <strong>АНГЛИЙСКОМ языке</strong>. Прикрепите файл с примером озвучки! Буду благодарна любой помощи в разработке. Просьба указать в поле <strong>«Имя»</strong> ваш псевдоним / имя, чтобы я указала вас в титрах ^_^
-                  </p>
-                  <p className="text-[#dcddde] text-sm sm:text-base mb-3">
-                    также упомяну — в примере можете озвучить <strong>любой текст</strong>, либо же текст с мода 1980х:
-                  </p>
-                  <div className="bg-[#202225] border border-[#40444b] rounded-lg p-3 sm:p-4 mb-3 font-mono text-sm text-[#dcddde] leading-relaxed whitespace-pre-line">{"I eliminated the girl who was planning to confess to my Senpai...\n...but another girl has fallen in love with him.\nJust like the last girl, she plans to confess to him at 6:00 PM on Friday.\nI can't let her take him from me.\nOne way or another, I must eliminate her before the end of the week..."}</div>
-                  <p className="text-[#dcddde] text-sm sm:text-base mb-2">
-                    надеюсь то что кто-то да поможет всех люблю! (○｀ 3′○)
-                  </p>
-                  <p className="text-[#b9bbbe] text-sm sm:text-base italic">
-                    Возможны неполадки что не смогу отвечать нооо это в крайняк ! о_0
-                  </p>
+                  {lang === "ru" ? (
+                    <>
+                      <p className="text-[#dcddde] text-sm sm:text-base mb-3">
+                        <strong>РУССКАЯ ВЕРСИЯ — Приветааау!</strong> Я создаю мод на Яндере Симулятор <strong>«Арика Айши»</strong>. Мой псевдоним — Руика Саки 🌸 Я активно ищу людей, которые смогут озвучить текст на <strong>АНГЛИЙСКОМ языке</strong>. Прикрепите файл с примером озвучки! Буду благодарна любой помощи в разработке. Просьба указать в поле <strong>«Имя»</strong> ваш псевдоним / имя, чтобы я указала вас в титрах ^_^
+                      </p>
+                      <p className="text-[#dcddde] text-sm sm:text-base mb-3">
+                        также упомяну — в примере можете озвучить <strong>любой текст</strong>, либо же текст с мода 1980х:
+                      </p>
+                      <div className="bg-[#202225] border border-[#40444b] rounded-lg p-3 sm:p-4 mb-3 font-mono text-sm text-[#dcddde] leading-relaxed whitespace-pre-line">{"I eliminated the girl who was planning to confess to my Senpai...\n...but another girl has fallen in love with him.\nJust like the last girl, she plans to confess to him at 6:00 PM on Friday.\nI can't let her take him from me.\nOne way or another, I must eliminate her before the end of the week..."}</div>
+                      <p className="text-[#dcddde] text-sm sm:text-base mb-2">
+                        надеюсь то что кто-то да поможет всех люблю! (○｀ 3′○)
+                      </p>
+                      <p className="text-[#b9bbbe] text-sm sm:text-base italic">
+                        Возможны неполадки что не смогу отвечать нооо это в крайняк ! о_0
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <p className="text-[#dcddde] text-sm sm:text-base mb-3">
+                        <strong>ENGLISH VERSION — Heyyyy!</strong> I'm creating a Yandere Simulator mod called <strong>"Arika Aishi"</strong>. My nickname is Ruika Saki 🌸 I'm actively looking for people who can voice lines in <strong>ENGLISH</strong>. Please attach a file with a voice sample! I'd be grateful for any help with the development. Please write your nickname / name in the <strong>"Name"</strong> field so I can credit you in the credits ^_^
+                      </p>
+                      <p className="text-[#dcddde] text-sm sm:text-base mb-3">
+                        Also — for the sample you can voice <strong>any text</strong>, or use this line from the 1980s mod:
+                      </p>
+                      <div className="bg-[#202225] border border-[#40444b] rounded-lg p-3 sm:p-4 mb-3 font-mono text-sm text-[#dcddde] leading-relaxed whitespace-pre-line">{"I eliminated the girl who was planning to confess to my Senpai...\n...but another girl has fallen in love with him.\nJust like the last girl, she plans to confess to him at 6:00 PM on Friday.\nI can't let her take him from me.\nOne way or another, I must eliminate her before the end of the week..."}</div>
+                      <p className="text-[#dcddde] text-sm sm:text-base mb-2">
+                        I hope someone will help, love you all! (○｀ 3′○)
+                      </p>
+                      <p className="text-[#b9bbbe] text-sm sm:text-base italic">
+                        There might be delays in my responses but that's only in extreme cases! o_0
+                      </p>
+                    </>
+                  )}
 
                 </div>
               </div>
@@ -229,29 +278,29 @@ const Index = () => {
               <div className="bg-[#2f3136] border border-[#202225] rounded-lg p-4 sm:p-6">
                 <h3 className="text-lg sm:text-xl font-bold text-white mb-4 flex items-center gap-2">
                   <Star className="w-5 h-5 text-[#faa61a]" />
-                  Требования к записи
+                  {lang === "ru" ? "Требования к записи" : "Recording requirements"}
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
                   <div className="text-center">
                     <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#5865f2] rounded-full flex items-center justify-center mx-auto mb-3">
                       <span className="text-white font-bold text-sm sm:text-base">1</span>
                     </div>
-                    <h4 className="text-white font-medium mb-2 text-sm sm:text-base">Формат файла</h4>
-                    <p className="text-[#b9bbbe] text-xs sm:text-sm">MP3, WAV, MP4 или любой видеоформат</p>
+                    <h4 className="text-white font-medium mb-2 text-sm sm:text-base">{lang === "ru" ? "Формат файла" : "File format"}</h4>
+                    <p className="text-[#b9bbbe] text-xs sm:text-sm">{lang === "ru" ? "MP3, WAV, MP4 или любой видеоформат" : "MP3, WAV, MP4 or any video format"}</p>
                   </div>
                   <div className="text-center">
                     <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#5865f2] rounded-full flex items-center justify-center mx-auto mb-3">
                       <span className="text-white font-bold text-sm sm:text-base">2</span>
                     </div>
-                    <h4 className="text-white font-medium mb-2 text-sm sm:text-base">Длительность</h4>
-                    <p className="text-[#b9bbbe] text-xs sm:text-sm">От 30 секунд до 3 минут демо</p>
+                    <h4 className="text-white font-medium mb-2 text-sm sm:text-base">{lang === "ru" ? "Длительность" : "Duration"}</h4>
+                    <p className="text-[#b9bbbe] text-xs sm:text-sm">{lang === "ru" ? "От 30 секунд до 3 минут демо" : "From 30 seconds to 3 minutes demo"}</p>
                   </div>
                   <div className="text-center">
                     <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#5865f2] rounded-full flex items-center justify-center mx-auto mb-3">
                       <span className="text-white font-bold text-sm sm:text-base">3</span>
                     </div>
-                    <h4 className="text-white font-medium mb-2 text-sm sm:text-base">Качество</h4>
-                    <p className="text-[#b9bbbe] text-xs sm:text-sm">Чистый звук без сильных шумов</p>
+                    <h4 className="text-white font-medium mb-2 text-sm sm:text-base">{lang === "ru" ? "Качество" : "Quality"}</h4>
+                    <p className="text-[#b9bbbe] text-xs sm:text-sm">{lang === "ru" ? "Чистый звук без сильных шумов" : "Clean audio without heavy background noise"}</p>
                   </div>
                 </div>
               </div>
@@ -260,27 +309,27 @@ const Index = () => {
               <div id="contact-form" className="bg-[#2f3136] border border-[#202225] rounded-lg p-4 sm:p-6">
                 <h2 className="text-xl sm:text-2xl font-bold text-white mb-2 flex items-center gap-2">
                   <MessageSquare className="w-5 h-5 sm:w-6 sm:h-6 text-[#5865f2]" />
-                  Подать заявку
+                  {lang === "ru" ? "Подать заявку" : "Submit application"}
                 </h2>
-                <p className="text-[#b9bbbe] text-sm mb-5">Заполни форму и прикрепи своё демо — я свяжусь с тобой лично</p>
+                <p className="text-[#b9bbbe] text-sm mb-5">{lang === "ru" ? "Заполни форму и прикрепи своё демо — я свяжусь с тобой лично" : "Fill out the form and attach your demo — I'll contact you personally"}</p>
 
                 {submitted ? (
                   <div className="flex flex-col items-center gap-3 py-8 text-center">
                     <CheckCircle className="w-12 h-12 text-[#3ba55c]" />
-                    <h3 className="text-white text-lg font-semibold">Заявка отправлена!</h3>
-                    <p className="text-[#b9bbbe] text-sm">Отвечу тебе в течение 48 часов. Спасибо!</p>
+                    <h3 className="text-white text-lg font-semibold">{lang === "ru" ? "Заявка отправлена!" : "Application submitted!"}</h3>
+                    <p className="text-[#b9bbbe] text-sm">{lang === "ru" ? "Отвечу тебе в течение 48 часов. Спасибо!" : "I'll reply within 48 hours. Thank you!"}</p>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-[#8e9297] text-xs font-semibold uppercase tracking-wide mb-1.5">
-                          Имя *
+                          {lang === "ru" ? "Имя *" : "Name *"}
                         </label>
                         <input
                           required
                           type="text"
-                          placeholder="Как тебя зовут?"
+                          placeholder={lang === "ru" ? "Как тебя зовут?" : "What's your name?"}
                           value={form.name}
                           onChange={(e) => setForm({ ...form, name: e.target.value })}
                           className="w-full bg-[#40444b] border border-[#202225] rounded px-3 py-2.5 text-white text-sm placeholder-[#72767d] focus:outline-none focus:border-[#5865f2] transition-colors"
@@ -288,12 +337,12 @@ const Index = () => {
                       </div>
                       <div>
                         <label className="block text-[#8e9297] text-xs font-semibold uppercase tracking-wide mb-1.5">
-                          Контакт *
+                          {lang === "ru" ? "Контакт *" : "Contact *"}
                         </label>
                         <input
                           required
                           type="text"
-                          placeholder="Discord, Telegram или email"
+                          placeholder={lang === "ru" ? "Discord, Telegram или email" : "Discord, Telegram or email"}
                           value={form.contact}
                           onChange={(e) => setForm({ ...form, contact: e.target.value })}
                           className="w-full bg-[#40444b] border border-[#202225] rounded px-3 py-2.5 text-white text-sm placeholder-[#72767d] focus:outline-none focus:border-[#5865f2] transition-colors"
@@ -303,11 +352,11 @@ const Index = () => {
 
                     <div>
                       <label className="block text-[#8e9297] text-xs font-semibold uppercase tracking-wide mb-1.5">
-                        Опыт озвучки
+                        {lang === "ru" ? "Опыт озвучки" : "Voice acting experience"}
                       </label>
                       <input
                         type="text"
-                        placeholder="Опыт в играх, анимации, YouTube — напиши пару слов"
+                        placeholder={lang === "ru" ? "Опыт в играх, анимации, YouTube — напиши пару слов" : "Experience in games, animation, YouTube — a few words"}
                         value={form.role}
                         onChange={(e) => setForm({ ...form, role: e.target.value })}
                         className="w-full bg-[#40444b] border border-[#202225] rounded px-3 py-2.5 text-white text-sm placeholder-[#72767d] focus:outline-none focus:border-[#5865f2] transition-colors"
@@ -316,21 +365,20 @@ const Index = () => {
 
                     <div>
                       <label className="block text-[#8e9297] text-xs font-semibold uppercase tracking-wide mb-1.5">
-                        Сообщение
+                        {lang === "ru" ? "Сообщение" : "Message"}
                       </label>
                       <textarea
                         rows={3}
-                        placeholder="Расскажи о себе, своём голосе, персонажах которых можешь сыграть..."
+                        placeholder={lang === "ru" ? "Расскажи о себе, своём голосе, персонажах которых можешь сыграть..." : "Tell us about yourself, your voice, what characters you can play..."}
                         value={form.message}
                         onChange={(e) => setForm({ ...form, message: e.target.value })}
                         className="w-full bg-[#40444b] border border-[#202225] rounded px-3 py-2.5 text-white text-sm placeholder-[#72767d] focus:outline-none focus:border-[#5865f2] transition-colors resize-none"
                       />
                     </div>
 
-                    {/* Загрузка файла */}
                     <div>
                       <label className="block text-[#8e9297] text-xs font-semibold uppercase tracking-wide mb-1.5">
-                        Демо-запись (аудио или видео)
+                        {lang === "ru" ? "Демо-запись (аудио или видео)" : "Demo recording (audio or video)"}
                       </label>
                       <div
                         className="border-2 border-dashed border-[#40444b] hover:border-[#5865f2] rounded-lg p-4 sm:p-6 text-center cursor-pointer transition-colors group"
@@ -351,8 +399,8 @@ const Index = () => {
                         ) : (
                           <>
                             <Upload className="w-8 h-8 text-[#4f545c] group-hover:text-[#5865f2] mx-auto mb-2 transition-colors" />
-                            <p className="text-[#b9bbbe] text-sm">Нажми чтобы выбрать файл</p>
-                            <p className="text-[#72767d] text-xs mt-1">MP3, WAV, MP4, MOV — до 100 МБ</p>
+                            <p className="text-[#b9bbbe] text-sm">{lang === "ru" ? "Нажми чтобы выбрать файл" : "Click to select a file"}</p>
+                            <p className="text-[#72767d] text-xs mt-1">MP3, WAV, MP4, MOV — {lang === "ru" ? "до 100 МБ" : "up to 100 MB"}</p>
                           </>
                         )}
                       </div>
@@ -363,7 +411,7 @@ const Index = () => {
                       className="w-full bg-[#5865f2] hover:bg-[#4752c4] text-white py-3 rounded text-sm font-semibold"
                     >
                       <Mic className="w-4 h-4 mr-2" />
-                      Отправить заявку
+                      {lang === "ru" ? "Отправить заявку" : "Submit application"}
                     </Button>
                   </form>
                 )}
@@ -371,14 +419,19 @@ const Index = () => {
 
               {/* Преимущества */}
               <div className="bg-[#2f3136] border border-[#202225] rounded-lg p-4 sm:p-6">
-                <h3 className="text-lg sm:text-xl font-bold text-white mb-4">Почему же стоит поучаствовать в проекте ?</h3>
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-4">{lang === "ru" ? "Почему же стоит поучаствовать в проекте ?" : "Why should you join the project?"}</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                  {[
+                  {(lang === "ru" ? [
                     { icon: "Star", title: "Твой голос в игре", desc: "Твой голос услышат все игроки что поиграют в мод <3" },
                     { icon: "Shield", title: "Полное авторство", desc: "Ты указан в титрах мода" },
                     { icon: "MessageSquare", title: "Быстрый ответ ! ^_^", desc: "Работаем вместе ! при любых проблемок разработчик поможет ;3" },
                     { icon: "CheckCircle", title: "Гибкий формат", desc: "Запись дома — никуда ехать не надо" },
-                  ].map((feature, index) => (
+                  ] : [
+                    { icon: "Star", title: "Your voice in the game", desc: "Every player who plays the mod will hear your voice <3" },
+                    { icon: "Shield", title: "Full credit", desc: "You'll be listed in the mod credits" },
+                    { icon: "MessageSquare", title: "Quick replies! ^_^", desc: "We work together! The dev will help with any issues ;3" },
+                    { icon: "CheckCircle", title: "Flexible format", desc: "Record at home — no need to go anywhere" },
+                  ]).map((feature, index) => (
                     <div
                       key={index}
                       className="flex items-start gap-2 sm:gap-3 p-2 sm:p-3 rounded hover:bg-[#36393f] transition-colors"
@@ -404,7 +457,7 @@ const Index = () => {
               >
                 <div className="text-[#72767d] text-xs sm:text-sm flex items-center gap-2">
                   <Mic className="w-4 h-4" />
-                  Нажми чтобы оставить заявку на озвучку...
+                  {lang === "ru" ? "Нажми чтобы оставить заявку на озвучку..." : "Click to submit your voice acting application..."}
                 </div>
               </div>
             </div>
